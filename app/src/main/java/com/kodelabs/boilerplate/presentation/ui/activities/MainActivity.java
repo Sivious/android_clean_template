@@ -7,8 +7,13 @@ import android.widget.TextView;
 
 import com.kodelabs.boilerplate.R;
 import com.kodelabs.boilerplate.domain.model.RandomUserResponse;
+import com.kodelabs.boilerplate.domain.model.User;
 import com.kodelabs.boilerplate.framework.rest.UserAPI;
+import com.kodelabs.boilerplate.presentation.presenters.MainPresenter;
 import com.kodelabs.boilerplate.presentation.presenters.MainPresenter.View;
+import com.kodelabs.boilerplate.presentation.presenters.impl.MainPresenterImpl;
+
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -21,6 +26,8 @@ public class MainActivity extends AppCompatActivity implements View {
 
     @BindView(R.id.texview_main_hello_world)
     TextView hello;
+    MainPresenter presenter;
+    private List<User> users;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,9 +35,16 @@ public class MainActivity extends AppCompatActivity implements View {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
+        init();
 
         //loadJson();
         getRandomUsers();
+    }
+
+    private void init() {
+        presenter = new MainPresenterImpl(this, getApplicationContext());
+
+        presenter.getUsers();
     }
 
     @Override
@@ -72,43 +86,9 @@ public class MainActivity extends AppCompatActivity implements View {
         Log.d("TAG", "tag");
     }
 
-//    private void loadJson(){
-//        Gson gson = new GsonBuilder()
-//                .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
-//                .create();
-//
-//        Retrofit retrofit = new Retrofit.Builder()
-//                .baseUrl("https://randomuser.me/")
-//                .addConverterFactory(GsonConverterFactory.create(gson))
-//                .build();
-//
-//        UserAPI restClient = retrofit.create(UserAPI.class);
-//
-//        Call<RandomUserResponse> call = restClient.getUsers(20);
-//
-//        call.enqueue(new Callback<RandomUserResponse>() {
-//            @Override
-//            public void onResponse(Call<RandomUserResponse> call, Response<RandomUserResponse> response) {
-//                switch (response.code()) {
-//                    case 200:
-//                        RandomUserResponse data = response.body();
-//                        //view.notifyDataSetChanged(data.getResults());
-//                        break;
-//                    case 401:
-//
-//                        break;
-//                    default:
-//
-//                        break;
-//                }
-//            }
-//
-//            @Override
-//            public void onFailure(Call<RandomUserResponse> call, Throwable t) {
-//                Log.d("TAG", "Failure");
-//            }
-//        });
-//
-//
-//    }
+    @Override
+    public void showUsers(List<User> results) {
+        this.users = results;
+    }
+
 }

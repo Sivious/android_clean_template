@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Android-Clean-Boilerplate</string>
+    <string name="users_error">Could not get users list</string>
 </resources>
