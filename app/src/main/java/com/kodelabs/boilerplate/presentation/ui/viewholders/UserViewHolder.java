@@ -2,6 +2,7 @@ package com.kodelabs.boilerplate.presentation.ui.viewholders;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.kodelabs.boilerplate.R;
@@ -20,6 +21,8 @@ public class UserViewHolder extends RecyclerView.ViewHolder{
     public TextView email;
     @BindView(R.id.text_gender)
     public TextView gender;
+    @BindView(R.id.image_profile)
+    public ImageView profile;
 
 
     public UserViewHolder(View itemView) {
