@@ -21,50 +21,6 @@ import rx.schedulers.Schedulers;
 
 public class APIClient {
 
-    private static Retrofit retrofit = null;
-
-    static Retrofit getClient() {
-        HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
-        interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
-        OkHttpClient client = new OkHttpClient.Builder().addInterceptor(interceptor).build();
-
-        retrofit = new Retrofit.Builder()
-                .baseUrl("https://randomuser.me/api")
-                .addConverterFactory(GsonConverterFactory.create())
-                .client(client)
-                .build();
-
-        return retrofit;
-    }
-
-//    public static <T> T createRetrofitService(final Class<T> clazz, final String endPoint) {
-//
-//        final UserAPI randomUserAPI = UserAPI.Factory.create();
-//        randomUserAPI.getRandomUsers(20)
-//                .subscribeOn(Schedulers.newThread())
-//                .observeOn(AndroidSchedulers.mainThread())
-//                .subscribe(new Subscriber<RandomUserResponse>() {
-//                    @Override
-//                    public void onCompleted() {
-//
-//                    }
-//
-//                    @Override
-//                    public void onError(Throwable e) {
-//                        Log.e("People", e.getMessage());
-//                    }
-//
-//                    @Override
-//                    public void onNext(RandomUserResponse response) {
-////                        mPeopleFragmentBinding.rvPeopleList.setLayoutManager(setLayoutManager());
-////                        mPeopleFragmentBinding.rvPeopleList.setHasFixedSize(true);
-////                        mPeopleListAdapter = new PeopleListAdapter(getContext(), response.getResults());
-////                        mPeopleFragmentBinding.rvPeopleList.setAdapter(mPeopleListAdapter);
-//                        Log.e("People", response.toString());
-//                    }
-//                });
-//    }
-
     public static <T> T createRetrofitService(final Class<T> clazz, final String endPoint) {
 
         Gson gson = new GsonBuilder()
