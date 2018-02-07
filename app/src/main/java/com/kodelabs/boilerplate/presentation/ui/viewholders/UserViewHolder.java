@@ -1,5 +1,6 @@
 package com.kodelabs.boilerplate.presentation.ui.viewholders;
 
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
@@ -15,6 +16,8 @@ import butterknife.ButterKnife;
  */
 
 public class UserViewHolder extends RecyclerView.ViewHolder{
+    @BindView(R.id.card_detail)
+    public CardView card;
     @BindView(R.id.text_name)
     public TextView name;
     @BindView(R.id.text_email)

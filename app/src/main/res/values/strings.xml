@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Random Users</string>
     <string name="users_error">Could not get users list</string>
+    <string name="title_activity_detail">User detail</string>
 </resources>

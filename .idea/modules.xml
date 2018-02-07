@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://D:\AndroidStudioProjects\Android-Clean-Boilerplate-master\Android-Clean-Boilerplate.iml" filepath="D:\AndroidStudioProjects\Android-Clean-Boilerplate-master\Android-Clean-Boilerplate.iml" />
       <module fileurl="file://$PROJECT_DIR$/Android-Clean-Boilerplate-master.iml" filepath="$PROJECT_DIR$/Android-Clean-Boilerplate-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android_clean_template.iml" filepath="$PROJECT_DIR$/android_clean_template.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

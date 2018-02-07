@@ -171,5 +171,7 @@ public class User implements Parcelable {
         }
     };
 
-
+    public String getFullName(){
+        return name.getTitle() + " " + name.getFirst() + " " + name.getLast();
+    }
 }
