@@ -37,6 +37,8 @@ public class DetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detail);
         ButterKnife.bind(this);
 
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         user = (User) getIntent().getExtras().get(Constants.USER_INTENT);
 
         setUserData();
@@ -49,5 +51,4 @@ public class DetailActivity extends AppCompatActivity {
         phone.setText(user.getCell());
         email.setText(user.getEmail());
     }
-
 }
