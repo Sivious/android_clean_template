@@ -2,4 +2,7 @@
     <string name="app_name">Random Users</string>
     <string name="users_error">Could not get users list</string>
     <string name="title_activity_detail">User detail</string>
+    <string name="mobile">Mobile</string>
+    <string name="email">Email</string>
+    <string name="address">Address</string>
 </resources>
